@@ -7,11 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.function.Consumer; 
 
-/**
- * @since  2018/09/28
- * @author GG
- * 系統設定圖書資訊
- */
 public class SystemLibrary {
 	public ArrayList<Book> BookList = new ArrayList<Book>();
 	public Scanner input = new Scanner(System.in);
@@ -55,9 +50,9 @@ public class SystemLibrary {
 				String NoName = input.nextLine();
 				System.out.println("-----------------------------------------借閱結果---------------------------------");
                 checkOutBook(NoName);
-      /******************************************
-      ***還書
-      *******************************************/
+	      /******************************************
+	      ***還書
+	      *******************************************/
 			}else if(print.equals("3")) {
 				 System.out.print("請輸入 國際標準書號(ISBN)=>");
 	             input = new Scanner(System.in, "big5");
@@ -193,19 +188,9 @@ public class SystemLibrary {
 ## Book.java
 
 package library.newBook;
-/**
- * @since  2018/09/28
- * @author GG
- * 優先印出圖書資訊
- */
-
 public class Book {
-	public Book(String string, String string2, String string3, int i, int j) {
-		// TODO 自動產生的建構子 Stub
-	}
-	public Book() {
-		// TODO 自動產生的建構子 Stub
-	}
+	public Book(String string, String string2, String string3, int i, int j) {}
+	public Book() {}
 	public Object numberB;
 	public Object chineseB;
 	public String engB;
@@ -216,11 +201,6 @@ public class Book {
 ## print 圖書館系統選項 Main.java
 
 package library.newBook;
-/**
- * @since  2018/09/28
- * @author GG
- * 優先印出圖書資訊
- */
 public class Main {
 	public static void main(String[] args) {
 		// TODO 自動產生的方法 Stub
