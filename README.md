@@ -37,7 +37,7 @@ public class SystemLibrary {
 					//尚未解決Exception in thread "main" java.util.NoSuchElementException: no line found問題
 //					System.out.println(story);
 					ArrayList<Book> resultList = findBooksByNoName(NoName);
-					System.out.println("-----------------------------------------------查詢結果-----------------------------------------------");
+					System.out.println("---------------------------------查詢結果--------------------------------");
 	                if (!resultList.isEmpty()) {
 	                	printBookList(resultList);
 	                }
@@ -57,7 +57,7 @@ public class SystemLibrary {
 			}else if(print.equals("2")) {
 				System.out.println("請輸入借閱書名: ");
 				String NoName = input.nextLine();
-				System.out.println("-------------------------------------------------借閱結果------------------------------------------------");
+				System.out.println("-----------------------------------------借閱結果---------------------------------");
                 checkOutBook(NoName);
       /******************************************
       ***還書
@@ -66,7 +66,7 @@ public class SystemLibrary {
 				 System.out.print("請輸入 國際標準書號(ISBN)=>");
 	             input = new Scanner(System.in, "big5");
 	             String isbn = input.nextLine().toUpperCase().trim();
-	             System.out.println("------------------------------------------還書結果-----------------------------------------------");
+	             System.out.println("----------------------------------------------------還書結果-------------------------------");
 	             returnBook(isbn);
 	    /******************************************
 	    ***捐書(新增)
