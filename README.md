@@ -1,7 +1,8 @@
-# LibraryTestSystem
+### LibraryTestSystem
 sample Library System 
 
 # SystemLibrary.java
+
 package library.newBook;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,9 +18,7 @@ public class SystemLibrary {
 		System.out.print("請輸入選項數字(1~5)=>");
 		String print = input.nextLine();
 		while(true) {
-			/******************************************
-			 ***查詢
-			*******************************************/
+	
 			if(print.equals("1")) {
 				System.out.print("請輸入查詢資訊:　a.編號 b.中文書名 c.英文書名 d.ISBN");
 				input = new Scanner(System.in);
@@ -42,26 +41,23 @@ public class SystemLibrary {
 				}else {
 					System.out.println("輸入錯誤，請重新輸入。");
 				}
-			/******************************************
-			 ***借閱
-			*******************************************/		
+			
+			
 			}else if(print.equals("2")) {
 				System.out.println("請輸入借閱書名: ");
 				String NoName = input.nextLine();
 				System.out.println("-----------------------------------------借閱結果---------------------------------");
                 checkOutBook(NoName);
-	      /******************************************
-	      ***還書
-	      *******************************************/
+	      
+	      
 			}else if(print.equals("3")) {
 				 System.out.print("請輸入 國際標準書號(ISBN)=>");
 	             input = new Scanner(System.in, "big5");
 	             String isbn = input.nextLine().toUpperCase().trim();
 	             System.out.println("----------------------------------------------------還書結果-------------------------------");
 	             returnBook(isbn);
-	    /******************************************
-	    ***捐書(新增)
-	    *******************************************/
+	    
+	    
 			}else if(print.equals("4")) {
 				System.out.print("請輸入 國際標準書號(ISBN),中文書名,英文書名,價格,數量(以逗點隔開)=>");
                 input = new Scanner(System.in, "big5");
@@ -184,7 +180,6 @@ public class SystemLibrary {
 	}
 }
 
-
 ## Book.java
 
 package library.newBook;
@@ -203,7 +198,6 @@ public class Book {
 package library.newBook;
 public class Main {
 	public static void main(String[] args) {
-		// TODO 自動產生的方法 Stub
 		SystemLibrary sysbooks = new SystemLibrary(); 
 		sysbooks.PrintMenu();
 		sysbooks.systemlib();//private
