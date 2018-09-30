@@ -2,7 +2,6 @@
 sample Library System 
 
 package library.newBook;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.function.Consumer; //消費者
@@ -14,7 +13,6 @@ import java.util.function.Consumer; //消費者
 public class SystemLibrary {
 	public ArrayList<Book> BookList = new ArrayList<Book>();
 	public Scanner input = new Scanner(System.in);
-	
 	public SystemLibrary() {
         loadData();
     }
@@ -29,7 +27,6 @@ public class SystemLibrary {
 				System.out.print("請輸入查詢資訊:　a.編號 b.中文書名 c.英文書名 d.ISBN");
 				input = new Scanner(System.in);
 				String searchINFO = input.nextLine();
-				
 				if(searchINFO.equals("a")) {
 					System.out.println("編號:  ");
 					input = new Scanner(System.in);
@@ -42,8 +39,7 @@ public class SystemLibrary {
 	                	printBookList(resultList);
 	                }
 				}else if(searchINFO.equals("b")) {
-					System.out.println("中文書名: ");
-					
+					System.out.println("中文書名: ");	
 				}else if(searchINFO.equals("c")){
 					System.out.println("中文書名: ");
 				}else if(searchINFO.equals("d")) {
@@ -85,10 +81,8 @@ public class SystemLibrary {
 			input.close();
 		}
 	}
-	
-	----------------------------------------------------------------------------------------------------------------------------------
-  ----------------------------------------------------------------------------------------------------------------------------------
-	
+//----------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 	//查詢
 	private ArrayList<Book> findBooksByNoName(String bookNameANo) {
 		ArrayList<Book> resultNumber = new ArrayList<Book>();
@@ -109,7 +103,6 @@ public class SystemLibrary {
 			}
 		});
 	}
-  
 	//借閱
     private void checkOutBook(String name) {
     	
@@ -131,7 +124,6 @@ public class SystemLibrary {
                 .findAny().orElse(null);
         return book;
     }
-    
     //還書
     private void returnBook(String isbn) {
         Book book = queryByISBN(isbn);
@@ -144,15 +136,13 @@ public class SystemLibrary {
     }
     private Book queryByISBN(String isbn) {
         Book book = BookList.stream()
-                .filter(a -> a.isbn.equals(isbn))
-                .findAny().orElse(null);
+                .filter(a -> a.isbn.equals(isbn)).findAny().orElse(null);
         return book;
     }
-    
     //捐書(新增)
     private void addBook(String... bookInfo) {
     	Book book = new Book();
-//        Book book = new Book(bookInfo[0], bookInfo[1], bookInfo[2], Double.parseDouble(bookInfo[3]), Integer.parseInt(bookInfo[4]));
+//      Book book = new Book(bookInfo[0], bookInfo[1], bookInfo[2], Double.parseDouble(bookInfo[3]), Integer.parseInt(bookInfo[4]));
         boolean flag = false;
         for (Book b : BookList) {
             if (b.chineseB.equals(book.chineseB) && ((String) b.engB).equalsIgnoreCase(book.engB)) {
@@ -169,7 +159,6 @@ public class SystemLibrary {
             System.out.println(book.toString());
         }
     }
-    
     //倉庫裡面書籍
     private void loadData() {
         Book book1 = new Book("ABCD111111", "爪哇1", "java1", 450, 1);
@@ -187,7 +176,6 @@ public class SystemLibrary {
         BookList.add(book6);
         BookList.add(book7);
     }
-    
     //Start first
 	public void PrintMenu() {
 		System.out.println("歡迎蒞臨 WC圖書館");
@@ -200,8 +188,8 @@ public class SystemLibrary {
 }
 
 
-------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------
 
 package library.newBook;
 
@@ -213,7 +201,6 @@ package library.newBook;
  */
 
 public class Book {
-
 	public Book(String string, String string2, String string3, int i, int j) {
 		// TODO 自動產生的建構子 Stub
 	}
@@ -225,11 +212,10 @@ public class Book {
 	public String engB;
 	public int onShelf;
 	public Object isbn;
-	
 }
 
---------------------------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------
 
 package library.newBook;
 /**
@@ -238,14 +224,10 @@ package library.newBook;
  * 優先印出圖書資訊
  */
 public class Main {
-
 	public static void main(String[] args) {
 		// TODO 自動產生的方法 Stub
 		SystemLibrary sysbooks = new SystemLibrary(); 
-		
 		sysbooks.PrintMenu();
 		sysbooks.systemlib();//private
-		
 	}
-
 }
