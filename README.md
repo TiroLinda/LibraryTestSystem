@@ -5,7 +5,7 @@ sample Library System
 package library.newBook;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.function.Consumer; //消費者
+import java.util.function.Consumer; 
 /**
  * @since  2018/09/28
  * @author GG
@@ -56,22 +56,18 @@ public class SystemLibrary {
 				String NoName = input.nextLine();
 				System.out.println("-----------------------------------------借閱結果---------------------------------");
                 checkOutBook(NoName);
-	
       /******************************************
       ***還書
       *******************************************/
-      
 			}else if(print.equals("3")) {
 				 System.out.print("請輸入 國際標準書號(ISBN)=>");
 	             input = new Scanner(System.in, "big5");
 	             String isbn = input.nextLine().toUpperCase().trim();
 	             System.out.println("----------------------------------------------------還書結果-------------------------------");
 	             returnBook(isbn);
-		     
 	    /******************************************
 	    ***捐書(新增)
 	    *******************************************/
-	    
 			}else if(print.equals("4")) {
 				System.out.print("請輸入 國際標準書號(ISBN),中文書名,英文書名,價格,數量(以逗點隔開)=>");
                 input = new Scanner(System.in, "big5");
@@ -88,7 +84,6 @@ public class SystemLibrary {
 	}
 	
 ## SystemLibrary 搭配圖書系統部分
-	
 	//查詢
 	private ArrayList<Book> findBooksByNoName(String bookNameANo) {
 		ArrayList<Book> resultNumber = new ArrayList<Book>();
@@ -151,11 +146,9 @@ public class SystemLibrary {
     //捐書(新增)
     private void addBook(String... bookInfo) {
     	Book book = new Book();
-//      Book book = new Book(bookInfo[0], bookInfo[1], bookInfo[2], Double.parseDouble(bookInfo[3]), Integer.parseInt(bookInfo[4]));
         boolean flag = false;
         for (Book b : BookList) {
             if (b.chineseB.equals(book.chineseB) && ((String) b.engB).equalsIgnoreCase(book.engB)) {
-//          if (b.chineseBook.equals(book.chineseBook) && b.engBook.equalsIgnoreCase(book.engBook)) {
                 b.onShelf++;
                 System.out.println("新增書籍已存在!數量由" + (b.onShelf - 1) + "=>" + b.onShelf);
                 System.out.println(b.toString());
