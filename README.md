@@ -1,6 +1,7 @@
 # LibraryTestSystem
 sample Library System 
-#
+
+# SystemLibrary.java
 package library.newBook;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,6 @@ import java.util.function.Consumer; //消費者
  * 系統設定圖書資訊
  */
 public class SystemLibrary {
-
 	public ArrayList<Book> BookList = new ArrayList<Book>();
 	public Scanner input = new Scanner(System.in);
 	public SystemLibrary() {
@@ -87,7 +87,7 @@ public class SystemLibrary {
 		}
 	}
 	
-##搭配系統部分
+## SystemLibrary 搭配圖書系統部分
 	
 	//查詢
 	private ArrayList<Book> findBooksByNoName(String bookNameANo) {
@@ -221,7 +221,7 @@ public class Book {
 	public Object isbn;
 }
 
-##print 圖書館系統選項 Menu
+## print 圖書館系統選項 Main.java
 
 package library.newBook;
 /**
