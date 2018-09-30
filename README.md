@@ -74,7 +74,7 @@ sample Library System
 		}
 	}
 	
-## SystemLibrary 搭配圖書系統部分
+## SystemLibrary 搭配部分
 	//查詢
 	private ArrayList<Book> findBooksByNoName(String bookNameANo) {
 		ArrayList<Book> resultNumber = new ArrayList<Book>();
@@ -196,6 +196,7 @@ sample Library System
 	}
 	
 ## print 圖書館系統選項 Main.java
+![image](https://user-images.githubusercontent.com/43702225/46254167-72483d00-c4bd-11e8-97ba-a8c89dd156ae.png)
 
 	package library.newBook;
 	public class Main {
