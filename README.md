@@ -11,6 +11,7 @@ import java.util.function.Consumer; //消費者
  * 系統設定圖書資訊
  */
 public class SystemLibrary {
+
 	public ArrayList<Book> BookList = new ArrayList<Book>();
 	public Scanner input = new Scanner(System.in);
 	public SystemLibrary() {
@@ -55,18 +56,22 @@ public class SystemLibrary {
 				String NoName = input.nextLine();
 				System.out.println("-----------------------------------------借閱結果---------------------------------");
                 checkOutBook(NoName);
+	
       /******************************************
       ***還書
       *******************************************/
+      
 			}else if(print.equals("3")) {
 				 System.out.print("請輸入 國際標準書號(ISBN)=>");
 	             input = new Scanner(System.in, "big5");
 	             String isbn = input.nextLine().toUpperCase().trim();
 	             System.out.println("----------------------------------------------------還書結果-------------------------------");
 	             returnBook(isbn);
+		     
 	    /******************************************
 	    ***捐書(新增)
 	    *******************************************/
+	    
 			}else if(print.equals("4")) {
 				System.out.print("請輸入 國際標準書號(ISBN),中文書名,英文書名,價格,數量(以逗點隔開)=>");
                 input = new Scanner(System.in, "big5");
@@ -81,8 +86,10 @@ public class SystemLibrary {
 			input.close();
 		}
 	}
+	
 //----------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------------------
+	
 	//查詢
 	private ArrayList<Book> findBooksByNoName(String bookNameANo) {
 		ArrayList<Book> resultNumber = new ArrayList<Book>();
@@ -103,6 +110,7 @@ public class SystemLibrary {
 			}
 		});
 	}
+	
 	//借閱
     private void checkOutBook(String name) {
     	
@@ -124,6 +132,7 @@ public class SystemLibrary {
                 .findAny().orElse(null);
         return book;
     }
+    
     //還書
     private void returnBook(String isbn) {
         Book book = queryByISBN(isbn);
@@ -139,6 +148,7 @@ public class SystemLibrary {
                 .filter(a -> a.isbn.equals(isbn)).findAny().orElse(null);
         return book;
     }
+    
     //捐書(新增)
     private void addBook(String... bookInfo) {
     	Book book = new Book();
@@ -159,6 +169,7 @@ public class SystemLibrary {
             System.out.println(book.toString());
         }
     }
+    
     //倉庫裡面書籍
     private void loadData() {
         Book book1 = new Book("ABCD111111", "爪哇1", "java1", 450, 1);
