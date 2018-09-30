@@ -1,19 +1,20 @@
-### LibraryTestSystem
+# LibraryTestSystem
 sample Library System 
 
-# SystemLibrary.java
+### SystemLibrary.java
 
-package library.newBook;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.function.Consumer; 
+	package library.newBook;
 
-public class SystemLibrary {
-	public ArrayList<Book> BookList = new ArrayList<Book>();
-	public Scanner input = new Scanner(System.in);
-	public SystemLibrary() {
-        loadData();
-    }
+	import java.util.ArrayList;
+	import java.util.Scanner;
+	import java.util.function.Consumer; 
+
+	public class SystemLibrary {
+		public ArrayList<Book> BookList = new ArrayList<Book>();
+		public Scanner input = new Scanner(System.in);
+		public SystemLibrary() {
+		loadData();
+    	}
 	void systemlib() {
 		System.out.print("請輸入選項數字(1~5)=>");
 		String print = input.nextLine();
@@ -182,24 +183,24 @@ public class SystemLibrary {
 
 ## Book.java
 
-package library.newBook;
-public class Book {
-	public Book(String string, String string2, String string3, int i, int j) {}
-	public Book() {}
-	public Object numberB;
-	public Object chineseB;
-	public String engB;
-	public int onShelf;
-	public Object isbn;
-}
-
+	package library.newBook;
+	public class Book {
+		public Book(String string, String string2, String string3, int i, int j) {}
+		public Book() {}
+		public Object numberB;
+		public Object chineseB;
+		public String engB;
+		public int onShelf;
+		public Object isbn;
+	}
+	
 ## print 圖書館系統選項 Main.java
 
-package library.newBook;
-public class Main {
-	public static void main(String[] args) {
-		SystemLibrary sysbooks = new SystemLibrary(); 
-		sysbooks.PrintMenu();
-		sysbooks.systemlib();//private
+	package library.newBook;
+	public class Main {
+		public static void main(String[] args) {
+			SystemLibrary sysbooks = new SystemLibrary(); 
+			sysbooks.PrintMenu();
+			sysbooks.systemlib();//private
+		}
 	}
-}
