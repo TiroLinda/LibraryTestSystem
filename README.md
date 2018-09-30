@@ -6,6 +6,7 @@ package library.newBook;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.function.Consumer; 
+
 /**
  * @since  2018/09/28
  * @author GG
@@ -32,8 +33,6 @@ public class SystemLibrary {
 					System.out.println("編號:  ");
 					input = new Scanner(System.in);
 					String NoName = input.nextLine();
-					//尚未解決Exception in thread "main" java.util.NoSuchElementException: no line found問題
-//					System.out.println(story);
 					ArrayList<Book> resultList = findBooksByNoName(NoName);
 					System.out.println("---------------------------------查詢結果--------------------------------");
 	                if (!resultList.isEmpty()) {
@@ -97,7 +96,7 @@ public class SystemLibrary {
 	private void printBookList(ArrayList<Book> BookList) {
 		BookList.forEach(new Consumer<Book>(){
 			int count = 1;
-//			@Override
+
 			public void accept(Book b) {
 				System.out.println(count + "." + b.toString());
 				count++;
